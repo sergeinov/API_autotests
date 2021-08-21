@@ -1,3 +1,4 @@
+import api.BookingApi;
 import io.restassured.response.Response;
 import org.junit.Test;
 
@@ -9,8 +10,15 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class APITest {
 
         @Test
-        public void getBookingsReturn200(){
-                Response response = given().get("https://restful-booker.herokuapp.com/booking/");
+        public void getBookingReturn200(){
+                Response response = BookingApi.getBooking();
+
+                assertThat(response.getStatusCode(), equalTo(200));
+        }
+
+        @Test
+        public void getBookingIDReturn200(){
+                Response response = BookingApi.getBookingId("1");
 
                 assertThat(response.getStatusCode(), equalTo(200));
         }
