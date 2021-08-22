@@ -39,7 +39,6 @@
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
             <version>4.4.0</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- General data-binding functionality for Jackson: works on core streaming API   -->

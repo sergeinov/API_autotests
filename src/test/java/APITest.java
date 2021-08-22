@@ -18,9 +18,15 @@ public class APITest {
 
         @Test
         public void getBookingIDReturn200(){
-                Response response = BookingApi.getBookingId("1");
+                Response response = BookingApi.getBookingId("1", "application/json");   //  application/json - right type of header
 
                 assertThat(response.getStatusCode(), equalTo(200));
+        }
+        @Test
+        public void getBookingIDReturn418(){
+                Response response = BookingApi.getBookingId("1", "text/plain");
+
+                assertThat(response.getStatusCode(), equalTo(418));     // 418 -  I’m a teapot (joke)
         }
 
 }
